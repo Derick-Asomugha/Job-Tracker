@@ -1,0 +1,255 @@
+/* ================================
+   BASE
+================================ */
+.fc {
+  --fc-border-color: transparent;
+  --fc-page-bg-color: transparent;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* ================================
+   TOOLBAR
+================================ */
+.fc .fc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(17 24 39);
+}
+
+.dark .fc .fc-toolbar-title {
+  color: rgb(229 231 235);
+}
+
+/* Buttons */
+.fc .fc-button {
+  background: rgb(249 250 251);
+  border: 1px solid rgb(229 231 235);
+  color: rgb(55 65 81);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.dark .fc .fc-button {
+  background: rgb(17 24 39);
+  border-color: rgb(55 65 81);
+  color: rgb(209 213 219);
+}
+
+.fc .fc-button:hover {
+  background: rgb(243 244 246);
+}
+
+.dark .fc .fc-button:hover {
+  background: rgb(31 41 55);
+}
+
+.fc .fc-button-primary.fc-button-active {
+  background: rgb(17 24 39);
+  color: white;
+  border-color: rgb(17 24 39);
+}
+
+.dark .fc .fc-button-primary.fc-button-active {
+  background: rgb(229 231 235);
+  color: rgb(17 24 39);
+}
+
+/* ================================
+   GRID
+================================ */
+.fc .fc-scrollgrid {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.fc .fc-daygrid-day {
+  border: 1px solid rgb(243 244 246);
+}
+
+.dark .fc .fc-daygrid-day {
+  border-color: rgb(31 41 55);
+}
+
+.fc .fc-daygrid-day-frame {
+  padding: 0.35rem;
+}
+
+/* Day number */
+.fc .fc-daygrid-day-number {
+  font-size: 0.7rem;
+  color: rgb(107 114 128);
+}
+
+.dark .fc .fc-daygrid-day-number {
+  color: rgb(156 163 175);
+}
+
+/* Today */
+.fc .fc-day-today {
+  background: rgb(240 249 255) !important;
+}
+
+.dark .fc .fc-day-today {
+  background: rgba(56, 189, 248, 0.08) !important;
+}
+
+/* ================================
+   EVENTS (CALM & READABLE)
+================================ */
+.fc-event {
+  background: rgb(241 245 249);
+  color: rgb(15 23 42);
+  border: 1px solid rgb(226 232 240);
+  border-radius: 0.5rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.dark .fc-event {
+  background: rgb(30 41 59);
+  border-color: rgb(51 65 85);
+  color: rgb(226 232 240);
+}
+
+.fc-event:hover {
+  background: rgb(226 232 240);
+}
+
+.dark .fc-event:hover {
+  background: rgb(51 65 85);
+}
+
+/* Event text */
+.fc-event-title {
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.fc-event-time {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+/* ================================
+   WEEK / TIME GRID
+================================ */
+.fc-timegrid-slot {
+  border-color: rgb(243 244 246);
+}
+
+.dark .fc-timegrid-slot {
+  border-color: rgb(31 41 55);
+}
+
+.fc-timegrid-axis {
+  font-size: 0.65rem;
+  color: rgb(107 114 128);
+}
+
+.dark .fc-timegrid-axis {
+  color: rgb(156 163 175);
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 640px) {
+  .fc .fc-toolbar-title {
+    font-size: 0.95rem;
+  }
+
+  .fc .fc-button {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .fc-event-title {
+    font-size: 0.68rem;
+  }
+}
+/* ================================
+   TIMEGRID EVENT FIX (LIGHT MODE)
+================================ */
+
+/* Ensure week-view events have visible background */
+.fc .fc-timegrid-event {
+  background: rgb(241 245 249);
+  border: 1px solid rgb(226 232 240);
+  border-radius: 0.5rem;
+}
+
+/* Actual content wrapper */
+.fc .fc-timegrid-event .fc-event-main {
+  background: rgb(241 245 249);
+  color: rgb(15 23 42);
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.5rem;
+}
+
+/* Hover */
+.fc .fc-timegrid-event:hover,
+.fc .fc-timegrid-event:hover .fc-event-main {
+  background: rgb(226 232 240);
+}
+
+/* ================================
+   DARK MODE WEEK VIEW
+================================ */
+.dark .fc .fc-timegrid-event,
+.dark .fc .fc-timegrid-event .fc-event-main {
+  background: rgb(30 41 59);
+  border-color: rgb(51 65 85);
+  color: rgb(226 232 240);
+}
+
+/* Optional: subtle left accent (not shouty) */
+.fc .fc-timegrid-event {
+  border-left: 3px solid rgb(148 163 184);
+}
+
+.dark .fc .fc-timegrid-event {
+  border-left-color: rgb(100 116 139);
+}
+.calendar-tooltip {
+  position: absolute;
+  z-index: 10000;
+  display: none;
+  max-width: 260px;
+  padding: 0.6rem 0.75rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.dark .calendar-tooltip {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+
+.tooltip-title {
+  font-weight: 600;
+}
+
+.tooltip-role {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.tooltip-meta {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
