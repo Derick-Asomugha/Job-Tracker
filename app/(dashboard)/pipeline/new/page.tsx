@@ -100,20 +100,7 @@ export default function NewApplicationPage() {
           </select>
         </div>
 
-        {/* Applied Date */}
-        {/* <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 dark:text-gray-200">
-            Applied Date <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="date"
-            name="appliedAt"
-            value={form.appliedAt}
-            required
-            onChange={handleChange}
-            className="w-full rounded-md border border-gray-300 dark:border-gray-700 p-2 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none transition"
-          />
-        </div> */}
+        
 
         {/* Interview Date */}
         {form.status === "Interview" && (
