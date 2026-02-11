@@ -25,8 +25,8 @@ export default function InterviewCalendar({
   const [modalAppId, setModalAppId] = useState<string | null>(null);
   const [currentInterviewAt, setCurrentInterviewAt] = useState<string | undefined>();
   const calendarRef = useRef<FullCalendar>(null);
-  const app = interviews.find((a) => a._id === modalAppId);
-  const currentStatus = app?.status || "Applied";
+  // const app = interviews.find((a) => a._id === modalAppId);
+  // const currentStatus = app?.status || "Applied";
   const [interviewsState, setInterviewsState] = useState<Application[]>(interviews);
   
 const events = interviewsState
@@ -186,7 +186,7 @@ function hideTooltip() {
     {modalAppId && (
       <InterviewDateModal
         applicationId={modalAppId}
-        currentStatus={currentStatus}
+        // currentStatus={currentStatus}
         currentInterviewAt={currentInterviewAt}
         onCloseAction={handleModalClose}
         onSavedAction={handleInterviewSaved}
