@@ -267,7 +267,7 @@ export default function KanbanBoard({
       {modalApp && (
         <InterviewDateModal
           applicationId={modalApp._id}
-          currentStatus={modalApp.status}
+          // currentStatus={modalApp.status}
           currentInterviewAt={modalApp.interviewDate}
           onCloseAction={handleModalClose}
           onSavedAction={handleInterviewSaved}
