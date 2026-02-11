@@ -132,7 +132,7 @@ export default function SignUpPage() {
       className="
         flex flex-col items-center justify-center
         min-h-screen px-4 pb-6
-        bg-slate-100 dark:bg-slate-950
+        bg-slate-200 dark:bg-slate-950
       "
     >
       <SigningHeader />
@@ -141,9 +141,8 @@ export default function SignUpPage() {
         className="
           w-full max-w-md
           rounded-2xl
-          bg-slate-50 dark:bg-slate-900
+          bg-slate-100 shadow-2xl dark:bg-slate-900
           border border-slate-200/70 dark:border-slate-800
-          shadow-sm
           p-6 sm:p-8
         "
       >
