@@ -10,10 +10,10 @@ export default function SignIn() {
  
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-slate-100 dark:bg-slate-950">
+    <main className="flex flex-col items-center justify-center  min-h-screen px-4 bg-slate-200 dark:bg-slate-950">
       <SigningHeader />
 
-      <div className="w-full max-w-md rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm p-6 sm:p-8">
+      <div className="w-full max-w-md rounded-2xl bg-slate-100 shadow-2xl dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800  p-6 sm:p-8">
         <form action={signInAction} className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-700 dark:text-slate-100">
             Welcome back
@@ -62,7 +62,7 @@ export default function SignIn() {
         <form action={googleSignInAction}>
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 rounded-lg border py-2"
+            className="w-full flex items-center dark:bg-slate-100 bg-slate-300 justify-center gap-2 rounded-lg border py-2"
           >
             <Image src="/google.svg" alt="Google" width={18} height={18} />
             Sign in with Google
