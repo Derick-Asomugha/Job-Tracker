@@ -1,25 +1,20 @@
-
 "use client";
 
-import { googleSignInAction, signInAction } from "@/app/actions/auth";
-import { useActionState } from "react";
+import { signInAction, googleSignInAction } from "@/app/actions/auth";
+// import { useActionState } from "react";
 import Link from "next/link";
 import SigningHeader from "@/components/signingHeader";
 import Image from "next/image";
 
 export default function SignIn() {
-
-const [state, formAction] = useActionState(signInAction, {
-  error: "",
-});
-
+ 
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4 bg-slate-100 dark:bg-slate-950">
       <SigningHeader />
 
       <div className="w-full max-w-md rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm p-6 sm:p-8">
-        <form action={formAction} className="space-y-4">
+        <form action={signInAction} className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-700 dark:text-slate-100">
             Welcome back
           </h2>
@@ -48,9 +43,7 @@ const [state, formAction] = useActionState(signInAction, {
             />
           </div>
 
-          {state?.error && (
-            <p className="text-red-500 text-sm">{state.error}</p>
-          )}
+          {/* {state?.error && <p className="text-red-500 text-sm">{state.error}</p>} */}
 
           <button
             type="submit"

@@ -1,80 +1,40 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server"
 import { auth } from "@/lib/auth";
-
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 
-
-export async function signUpAction(prevState: any, formData: FormData) {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-  const name = formData.get("name") as string;
-
-  if (!email || !password || !name) {
-    return { error: "All fields are required" };
-  }
-
-  try {
-    await auth.api.signUpEmail({
-      body: { email, password, name },
-      headers: await headers(),
-    });
-  } catch (err: any) {
-    console.error("Sign up error:", err);
-
-    if (err?.response?.data?.message) {
-      return { error: err.response.data.message };
+export async function signUpAction(formData : FormData){
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const name = formData.get("name") as string;
+    if(!email || !password || !name){
+        throw new Error("Email, password, and name are required");
     }
-
-    return { error: "User already exists" };
-  }
-
-  // Only redirect if sign-up succeeded
-  redirect("/");
+    await auth.api.signUpEmail( {
+       body: {
+        email,
+        password,
+        name,
+         },
+    });
+    redirect("/");
 }
 
-
-
-
-
-export async function signInAction(
-  prevState: any,
-  formData: FormData
-) {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-
-  if (!email || !password) {
-    return { error: "Email and password are required" };
-  }
-
-  let result;
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    result = await auth.api.signInEmail({
-      body: { email, password },
-      headers: await headers(),
-    });
-  } catch (err: any) {
-    console.error("Sign in error:", err);
-
-    if (err?.response?.data?.message) {
-      return { error: err.response.data.message };
+export async function signInAction(formData : FormData){
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    if(!email || !password){
+        throw new Error("Email and password are required");
     }
-
-    return { error: "Incorrect email or password" };
-  }
-
-  // Only redirect if API succeeded
-  redirect("/");
+    await auth.api.signInEmail( {
+       body: {
+        email,
+        password,
+         },
+    });
+    redirect("/");
 }
-
-
-
-
-
 export async function googleSignInAction() {
   // Get the Google sign-in URL
   const response = await auth.api.signInSocial({
