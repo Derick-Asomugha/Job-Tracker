@@ -4,7 +4,7 @@ import { Status } from "@/constants/statuses";
 export interface SerializedApplication {
   _id: string;
   company: string;
-  position: string;
+  // position: string;
   status: Status;
   date: string;
   interviewDate?: string;
@@ -18,7 +18,7 @@ export function serializeApplication(app: any): SerializedApplication {
   return {
     _id: app._id.toString(),
     company: app.company,
-    position: app.position,
+    // position: app.position,
     status: app.status,
     date: app.createdAt.toISOString().split("T")[0],
     interviewDate: app.interviewDate,

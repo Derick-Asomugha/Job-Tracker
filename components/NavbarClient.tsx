@@ -26,7 +26,7 @@ export default function NavbarClient({ session }: any) {
       <nav className="w-full  bg-white dark:bg-gray-900 shadow-lg px-6 py-4 flex items-center justify-between md:justify-start">
         <div className="flex flex-col md:flex-row md:items-center md:gap-6 flex-1">
           <div>
-            <h1 className="md:text-lg text-xs font-semibold text-gray-900 dark:text-white">
+            <h1 className="md:text-lg text-base font-semibold text-gray-900 dark:text-white">
               Welcome back{session?.user?.name ? `, ${session.user.name}` : ""}!
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-300">
@@ -91,9 +91,6 @@ export default function NavbarClient({ session }: any) {
               <NavItem href="/pipeline" pathname={pathname} onClick={() => setToggleNav(false)}>
                 <CgLoadbarSound size={20} /> <p className="pl-2">Pipeline</p>
               </NavItem>
-              {/* <NavItem href="/resumeanalysis" pathname={pathname} onClick={() => setToggleNav(false)}>
-                <AiOutlineFileText size={20} /> <p className="pl-2">Resume Analysis</p>
-              </NavItem> */}
               <NavItem href="/analytics" pathname={pathname} onClick={() => setToggleNav(false)}>
                 <BsGraphUp size={20} /> <p className="pl-2">Analytics</p>
               </NavItem>

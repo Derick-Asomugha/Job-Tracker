@@ -51,8 +51,7 @@ export async function googleSignInAction() {
   redirect(response.url);
 }
 export async function signOutAction() {
-    // const confirmed = confirm("Are you sure you want to logout?");
-    // if (!confirmed) return;
+
 
     await auth.api.signOut({ headers: await headers() });
     redirect("/");
