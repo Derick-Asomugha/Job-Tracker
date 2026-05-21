@@ -75,7 +75,7 @@ export default function ForgotPasswordPage() {
       await authClient.requestPasswordReset({
         email,
         redirectTo:
-          "http://localhost:3000/reset-password",
+          process.env.NEXT_PUBLIC_SIGNIN_URL,
       });
 
     if (error) {
