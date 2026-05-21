@@ -74,6 +74,9 @@ export default function SignIn() {
           <Link href="/signup" className="text-[#0d4585] font-medium">
             Sign up
           </Link>
+          <Link href="/forget-password" className="text-[#0d4585] font-medium ml-4">
+            Forget password?{" "}
+          </Link>
         </p>
       </div>
     </main>
